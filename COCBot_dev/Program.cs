@@ -18,7 +18,7 @@ namespace COCBot_dev
             // this way we can avoid hard coding the environment secrets. I opted to use the Json and environment variable providers here.
             IConfiguration config = new ConfigurationBuilder()
                 .AddEnvironmentVariables(prefix: "DC_")
-                .AddJsonFile("Token.json", optional: true)
+                .AddJsonFile("Config/config.json", optional: true)
                 .Build();
 
             RunAsync(config).GetAwaiter().GetResult();
@@ -51,7 +51,7 @@ namespace COCBot_dev
             await services.GetRequiredService<CommandHandler>().InitializeAsync();
 
             // Bot token can be provided from the Configuration object we set up earlier
-            await client.LoginAsync(TokenType.Bot, configuration["token"]);
+            await client.LoginAsync(TokenType.Bot, configuration["discordToken"]);
             await client.StartAsync();
 
             await Task.Delay(Timeout.Infinite);

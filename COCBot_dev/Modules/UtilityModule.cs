@@ -23,7 +23,7 @@ namespace COCBot_dev.Modules
     {
         IConfiguration config = new ConfigurationBuilder()
                 .AddEnvironmentVariables(prefix: "DC_")
-                .AddJsonFile("Token.json", optional: true)
+                .AddJsonFile("Config/config.json", optional: true)
                 .Build();
 
         // Dependencies can be accessed through Property injection, public properties with public setters will be set by the service provider
@@ -40,7 +40,7 @@ namespace COCBot_dev.Modules
         [SlashCommand("war", "Get the current war status")]
         public async Task WarInfo()
         {
-            var coc = new ClashOfClansClient(config["cocKey"]); 
+            var coc = new ClashOfClansClient(config["cocToken"]); 
             var war = await coc.Clans.GetCurrentWarAsync(config["clanTag"]); // pulls in war data
             EmbedBuilder builder = new EmbedBuilder() // creates a message builder
                                                       // sets thumbnail
