@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace COCBot_dev
+namespace RulerBot
 {
     class Program
     {

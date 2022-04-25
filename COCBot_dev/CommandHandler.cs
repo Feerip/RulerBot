@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace COCBot_dev
+namespace RulerBot
 {
     public class CommandHandler
     {

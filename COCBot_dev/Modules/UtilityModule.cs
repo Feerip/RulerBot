@@ -13,10 +13,10 @@ using ClashOfClans.Core;
 using ClashOfClans.Models;
 using ClashOfClans.Search;
 
-using COCBot_dev;
+using RulerBot;
 using Microsoft.Extensions.Configuration;
 
-namespace COCBot_dev.Modules
+namespace RulerBot.Modules
 {
     // Interation modules must be public and inherit from an IInterationModuleBase
     public class UtilityModule : InteractionModuleBase<SocketInteractionContext>
